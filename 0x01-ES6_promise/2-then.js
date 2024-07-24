@@ -1,5 +1,4 @@
 export default function handleResponseFromAPI(promise) {
-  return new Promise((resolve, reject) => {
     if (promise) {
       resolve({
         status: 200,
@@ -8,5 +7,11 @@ export default function handleResponseFromAPI(promise) {
     } else {
       reject(new Error('The fake API is not working currently'));
     }
-  }).then((result => console.log("Got a response from the API")))
+  }
+  myPromise.then((result) => {
+    console.log("Got a response from the API:", result);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
 }
