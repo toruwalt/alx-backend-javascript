@@ -1,4 +1,10 @@
-import Classroom from "./0-classrooms.js"
+import ClassRoom from './0-classroom.js';
 
-class initializeRooms extends Classroom {
-	constructor(
+export default function initializeRooms() {
+  let rooms = [];
+  rooms.push(new ClassRoom(19));
+  rooms.push(new ClassRoom(20));
+  rooms.push(new ClassRoom(34));
+  return rooms;
+}
+
