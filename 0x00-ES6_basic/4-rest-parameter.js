@@ -3,14 +3,6 @@ export default function returnHowManyArguments(...strings) {
 
   strings.forEach(() => {
     count += 1;
-  })
+  });
   return count;
 }
-
-/*
-  for (let string of strings) {
-    count += 1;
-  }
-  return count;
-}
-*/
