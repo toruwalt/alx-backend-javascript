@@ -10,9 +10,9 @@ export default function getBudgetForCurrentYear(income, gdp, capita) {
   const newProperty2 = `gdp-${getCurrentYear()}`;
   const newProperty3 = `capita-${getCurrentYear()}`;
 
-  budget[newProperty1] = income;
-  budget[newProperty2] = gdp;
-  budget[newProperty3] = capita;
+  budget[`${newProperty1}`] = income;
+  budget[`${newProperty2}`] = gdp;
+  budget[`${newProperty3}`] = capita;
 
   return budget;
 }
