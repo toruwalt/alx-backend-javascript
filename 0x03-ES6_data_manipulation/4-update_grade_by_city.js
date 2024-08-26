@@ -1,16 +1,17 @@
 export default function updateStudentGradeByCity(students, city, newGrades) {
-  if ((students instanceof Array) && typeof(city) === "string" && (newGrades instanceof Array)) {
-    const students_filtered = students.filter((students) => students.location == city);
-    
-    
-    const updated_list = students_filtered.map((student) => {
-      const gradeRecord = newGrades.find(grade => grade.studentId === student.id);
+  let updatedList;
+  if ((students instanceof Array) && typeof city === 'string' && (newGrades instanceof Array)) {
+    const studentsFiltered = students.filter((students) => students.location === city);
+
+    const updatedList = studentsFiltered.map((student) => {
+      const gradeRecord = newGrades.find((grade) => grade.studentId === student.id);
       return {
         ...student,
-        grade: gradeRecord ? gradeRecord.grade : "N/A",
-        };
-      })
+        grade: gradeRecord ? gradeRecord.grade : 'N/A',
+      };
+    });
 
-    return updated_list;
-    }
+    return updatedList;
   }
+  return updatedList;
+}
